@@ -2,10 +2,33 @@ version: '3'
 
 services:
 
+  nginx:
+    build:
+      context: nginx
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 4030:80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/trivy.conf:ro
+      - ./nginx_logs:/var/log/nginx
+    depends_on:
+      - trivy
+    networks:
+      - internet
+
   trivy:
     image: aquasec/trivy:0.22.0
     entrypoint: trivy server --skip-update --listen "0.0.0.0:4030"
     volumes:
       - ./trivy-data:/root/.cache/trivy/db
-    ports:
-      - 4030:4030
+    networks:
+      - no-internet
+      - internet
+
+networks:
+  no-internet:
+    driver: bridge
+    internal: true
+  internet:
+    driver: bridge

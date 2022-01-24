@@ -1,5 +1,5 @@
 trivy-offline.db.tgz
 trivy-data/*
 !trivy-data/.gitkeep
-trivy-cache/*
-!trivy-cache/.gitkeep
+nginx_logs/*
+!nginx_logs/.gitkeep
