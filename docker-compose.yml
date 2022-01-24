@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+
+  trivy:
+    image: aquasec/trivy:0.22.0
+    entrypoint: trivy server --skip-update --listen "0.0.0.0:4030"
+    volumes:
+      - ./trivy-data:/root/.cache/trivy/db
+    ports:
+      - 4030:4030
