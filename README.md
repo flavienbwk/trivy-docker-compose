@@ -30,8 +30,8 @@ sudo dpkg -i trivy_0.22.0_Linux-64bit.deb
 trivy client --offline-scan --remote http://172.17.0.1:4030 "$FULL_IMAGE_NAME"
 ```
 
-- Image sans vulnérabilité : node:10-alpine
-- Image avec vulnérabilité : alpine:3.12
+- Image avec vulnérabilité : `node:10-alpine`
+- Image sans vulnérabilité : `alpine:3.12`
 
 ## Run scan (CI)
 
