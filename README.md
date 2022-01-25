@@ -33,6 +33,9 @@ trivy client --offline-scan --remote http://172.17.0.1:4030 "$FULL_IMAGE_NAME"
 - Image avec vulnérabilité : `node:10-alpine`
 - Image sans vulnérabilité : `alpine:3.12`
 
+This will look like this :
+
+![Screenshot scan example](scan_example.png)
 ## Run scan (CI)
 
 Trivy can be [integrated to a GitLab CI](https://aquasecurity.github.io/trivy/v0.22.0/advanced/integrations/gitlab-ci/).
