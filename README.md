@@ -10,7 +10,7 @@ Run the following commands :
 
 ```bash
 mkdir trivy-data
-docker run --rm -v ./trivy-data:/root/.cache/db aquasec/trivy:0.29.2 image --download-db-only
+docker run --rm -v ./trivy-data:/root/.cache aquasec/trivy:0.29.2 image --download-db-only
 ```
 
 ### Run Trivy server
