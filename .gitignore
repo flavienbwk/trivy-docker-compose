@@ -1,4 +1,5 @@
-trivy-offline.db.tgz
+*db.tar.gz
+db.tar.gz
 trivy-data/*
 !trivy-data/.gitkeep
 nginx_logs/*

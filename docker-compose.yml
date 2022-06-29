@@ -18,7 +18,7 @@ services:
       - internet
 
   trivy:
-    image: aquasec/trivy:0.22.0
+    image: aquasec/trivy:0.29.2
     entrypoint: trivy server --skip-update --listen "0.0.0.0:4030"
     volumes:
       - ./trivy-data:/root/.cache/trivy/db
